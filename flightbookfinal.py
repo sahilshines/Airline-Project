@@ -8,11 +8,11 @@ mail=Mail(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'pypragmatics@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ssmm@py3.8'
+app.config['MAIL_PASSWORD'] = 's8'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail=Mail(app)
-engine=create_engine("postgres://postgres:Dsjo;#ooy619@localhost:5432/postgres")
+engine=create_engine("postgres://postgres:D9@localhost:5432/postgres")
 db=scoped_session(sessionmaker(bind=engine))
 @app.route("/")
 def index():
@@ -35,7 +35,7 @@ def prebook():
     except ValueError:
         return render_template("bookerror.html",message="Invalid Flight Number.")
     fly=db.execute("SELECT * FROM flights WHERE id=:id",{"id":flight_id}).fetchone()
-    api_key = "ecb7ac7804856a74c00fa686ae28e868"
+    api_key = "ec8"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
     city_name = fly.destination
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name 
